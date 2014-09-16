@@ -1,0 +1,6 @@
+?package(wifi-radar):\
+ title="WiFi Radar"\
+ needs="X11"\
+ section="Applications/Network/Monitoring"\
+ command="su-to-root -X -c /usr/sbin/wifi-radar"\
+ icon="/usr/share/pixmaps/wifi-radar.xpm"

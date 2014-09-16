@@ -1,0 +1,49 @@
+#
+# $Id: TODO 100 2008-01-10 15:48:45Z finley $
+#
+
+*   On 4/21/07, Roebe XXX <shevegen@linuxmail.org> wrote:
+        > Hi there. Small suggestion:
+        >
+        > wifi-radar -d
+        > Traceback (most recent call last):
+        >   File "/usr/sbin/wifi-radar", line 1618, in ?
+        >     set_network_device(INTERFACE)
+        >   File "/usr/sbin/wifi-radar", line 120, in set_network_device
+        >     INTERFACE = wireless_devices[0]
+        > IndexError: list index out of range
+        >
+        >
+        >
+        > I believe this is because I currently have no wlan device on this
+        > pc, but I think the error message should be different for the
+        > user, such as something that helps him a bit on error
+        > hunting, ie. "Installed wlan0 devices?" or similar
+
+* Look into:
+    why is the maximum length of a key only 32 symbols? it coudn't be hard
+    to programm that 63 symbols long keys are accepted too, or is it?
+
+*   Add a "No IP Config" button.  As in, only configure my wifi 
+    settings, let my OS configure my IP settings.
+* Add a column to display the channel the wireless network is using.
+  Idea by: John Skovran
+* True integration of WPA TKIP (wpa_supplicant)? (PARTIALLY done in
+  0.3.8-6mdk) 
+* An email list and a wiki.
+* "Cancel" button on the "Acquiring..." dialog box.
+* "About" button, with brief description and CREDITs.
+* Make wifi-radar run as a perpetual daemon that always checks the
+  connection status then Auto connects when possible.
+* Add more ifconfig and iwconfig status info.
+* Translate.
+* Hover over help to say drag and drop profiles to set ordered
+  preference.
+* Check box to allow attempt to connect to unconfigured APs, if no
+  configured APs exist, in daemon mode.
+* Add a check box to automatically close the GUI on successful IP
+  acquisition.  Wait X seconds before closing.
+* dbus extension for wifi-radar to make normal users able to start it
+  without having root or sudo.  Suggested by Patrick Winnertz.
+* handle --daemon mode case of properly ending or killing existing
+  instance of dhcp daemon prior to requesting new address.

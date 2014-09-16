@@ -1,0 +1,65 @@
+#
+# $Id: CREDITS 106 2008-03-12 15:55:43Z finley $
+#
+
+N: Ahmad Baitalmal 
+E: ahmad@bitbuilder.com
+D: creator
+
+N: Brian Elliott Finley 
+E: brian@thefinleys.com
+D: contributing author
+D: maintainer
+
+N: Brouard Nicolas 
+E: nicolas.brouard@libertysurf.fr
+D: contributing author
+
+N: Douglas Breault 
+E: genkreton@comcast.net
+D: contributing author
+
+N: Joey Hurst
+E: jhurst@lucubrate.org
+D: contributing author
+
+N: Jon Collette
+E: jonc@etelos.com
+D: contributing author
+
+N: Kevin Otte
+E: kotte@redhat.com
+D: contributing author
+
+N: Richard Monk
+E: rmonk@redhat.com
+D: contributing author
+
+N: Nathanael Rebsch
+E: nathanael@dihedral.de
+D: dhcpcd -> dhclient patch
+D: wpa patch
+
+N: Patrick Winnertz
+E: <winnie@debian.org>
+D: wpa patches
+D: man page patches
+D: makefile patches
+D: debian package maintainer
+
+N: Simon Gerber 
+E: gesimu@gmail.com
+D: ip_re = re.compile() Internationally compatible patch
+
+N: Gary Case
+E: gcase@redhat.com
+D: WPA Mini HOWTO
+
+N: Ante Karamatić
+E: ivoks@ubuntu.com
+D: Packaging
+
+N: David Decotigny
+E: com.d2@free.fr
+D: [FIX] wifi-radar and iwlist interferences
+

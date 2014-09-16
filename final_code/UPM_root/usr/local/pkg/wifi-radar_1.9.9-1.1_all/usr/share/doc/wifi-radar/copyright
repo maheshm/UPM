@@ -1,0 +1,21 @@
+This package was debianized by Patrick Winnertz
+<patrick.winnertz@skolelinux.org> on Sun, 29 Jul 2006 21:48:05 +0200.
+
+It was downloaded from <http://wifi-radar.systemimager.org/pub/>.
+
+Copyright 2005-2008 Ahmad Baitalmal <ahmad@bitbuilder.com>
+                    Brian Elliott Finley <brian@thefinleys.com>
+                    Brouard Nicolas <nicolas.brouard@libertysurf.fr>
+                    Douglas Breault <genkreton@comcast.net>
+                    Joey Hurst <jhurst@josephhurst.net>
+                    Jon Collette <jonc@etelos.com>
+                    Kevin Otte <kotte@redhat.com>
+                    Richard Monk <rmonk@redhat.com>
+
+License:
+
+You are free to distribute this software under the terms of
+the GNU General Public License Version 2.
+
+On Debian systems, the complete text of the GNU General Public
+License can be found in the file /usr/share/common-licenses/GPLv2.

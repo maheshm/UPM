@@ -1,0 +1,22 @@
+Frequently Asked Question
+
+
+Q: Why it work only on Linux for Intel ?
+A: Because I didn't have time to make it work for other cpu. But it
+seem to begin work on PPC architecture.
+
+Q: What are pre-requisite ?
+A: You need :
+	libpcap 0.7.1 (if you use a wlan-ng driver with a vertion
+	  greater than 0.1.13), [http://www.tcpdump.org/]
+	the Zlib
+	Curses library
+Normaly with thoses think you can compil WifiScanner :-)
+
+Q: I got this error message "eth1: Error -5 writing Tx descriptor to
+BAP" and my computer goes to hell
+A: Use the patch for Orinoco card made by Dargorn (dragorn@kismetwireless.net)
+You can find it in the patch directory.
+
+
+# vim:tw=72:

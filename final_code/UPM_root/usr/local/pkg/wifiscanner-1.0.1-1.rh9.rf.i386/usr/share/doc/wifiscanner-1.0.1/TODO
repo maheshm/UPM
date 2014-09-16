@@ -1,0 +1,136 @@
+TODO:
+- re-display spectral repartition. Now it's not display sometime, why ?
+- Save the summary report and spectral analysis to a file
+- use iwlist <interface> channel to define the channel list !
+- When option -S is used, no data packet was dicovered !!! but if channel
+  changed with + or - it detected data packet (critical bug)
+  (I didn't see it for a long time, temporary closed)
+- Check if MAC Add is not some spécific Mac add (Ipv6 broadcast, IGMP, ...)
+- Write the size of the data bloc when a data packet is received
+  ex : 06/02/2004 17:12:24.073,"",00(01),Wep,STA,...,Data To DS,DATA (xxx)
+- Little proble with manufacturer identification ...
+- Stats : count only channel read from packets (beacon, ...)
+- When a DEAUTH is catched : Clear BSSID of the Deauthenticated Client
+- Sometime the key pressed is lost and replaced by 'ÿ'
+- try to compile in PPC architecture
+- sort the node list on upper window
+- Analyse REASSREQ and ASSOCIATION
+- BUG: When REASSREQ arrive, paquet is not identified !
+- Detect jammer (try to identify jammer with some sequence number and TimeStamp)
+  it's begining to work
+- Identify active scanner (netstumbler, dstumbler and Windows XP)
+    Jammer and identify spoofed packet (two shot in one hole :)
+- Do a dynamic allocation of catched data/packets
+- In IDS : Analyse also when it's not a broadcast packet add a new array
+    (Mac@ cli, SeqNum)
+- Make a french version of Scanner (is it ireally needed :) ?)
+- detect if wget is available (for oui base in makefile)
+- Interface with Snort and/or Prelude (a big work)
+- If Challenge and response are catched, do the XOR to get a keystream.
+  (need to save a lot of data, and it already exist)
+- Add option to save IV, Challenge, crypted challenge and Keystream
+- if no name is given (for file) create an auto named file 
+    WifiScanner.date.[tcp,dbg,txt,dot,ids,wep]
+      .tcp : file contanning all network traffic - PCAP format (-W option)
+      .dbg : All output (debug and normal output)
+      .txt : Normal output (-F option)
+      .dot : graphical architecture (-D option)
+      .ids : All IDS alert - txt format with timestamp
+      .wep : All weak DATA to crack WEP
+      .kst : IV, Challenge, crypted challenge and Keystream - To do a Wep
+             attack and clear text cryptographic attack
+- Add TimeFirstSeen and TimeLastSeen in data structure
+- If TODS=1 and FROMDS=1, There are 4 MAC Add, program expect always 3,
+    so all data after are not correct (some work is done)
+- Add a bpf filter as parameter
+- Arrg so many options ... perharps I must think to do a parser of option
+  file ...
+- If scan on only one channel, do not write delta betwen detected channel and
+  scanned channel
+- Add capability to read and analyse data from pcap file.
+- Change channel if CHANNEL_READ_COUNT is reach AND buffer is empty AND buffer
+  is empty !
+- Add capability to choose the channel range scan.
+- Add capability to stop scan mode for a moment (like a pause) and do not
+  buffer packets
+- Add capability to ignore some MAC Address in interactive mode
+- Change spectral repartition function to use means (of 16 value) and not
+  max of value
+- Do a GTK interface, is it really a good need ?
+- send IDS alert to a file
+- Write the summary with max of power
+
+On the Way:
+- Add more comment
+- Add description of each functions
+- Resolve equation y=ax+b and store a and b coef. This will used to detect ...
+- Do multitread : One thread for changing channel, one another to analyse
+  paquets, and a third to listen keyborad. First and third thread are OK.
+
+DONE:
+- Repair the function to make .dot file : some BSSID is 00:00:00:00:00:00. It
+  seem to be not breaked :-)
+- send IDS alert to syslog
+- BUG: At the summary (end's summary) an ad-hoc client is identified as an AP
+- Write in pannel windows if a card is STA/AP or AD-HOC not only STA/AP
+- Use of -C cisco_wifi implie -i with TWO interface.
+- Need to be more independant from linux-wlan-ng code.
+  extract data from .h file and add them to src/wlan-ng.h
+- Possibility of scroll in panel window
+- scroll upper windows
+- BUG: Repair -M option
+- Add key interactivity  (+,-) working, more commands is okay
+- create man page
+- Use long-option for a better configuration
+- Add a default display of unknow or un-analysed packet
+  only CFEND, CFENDCFACK, CFACK, CFPOLL, CFACK_CFPOLL is not analysed
+- Optimize src/wlan-ng.c function and look at airsnort/src/capture.c
+  Call to driver is made directly with ioctl call
+- Make a french version of README
+- change name to wifiscanner
+- BUG: When -H13 option is used, program exit directly ?!
+- Add compatibility with HostAP and CISCO driver.
+- Add Max speed available for each detected client in summary
+- All specific function to WLAN-NG driver are in one file
+- Indicate the gap between channel read in packet and channel scanned
+- Re-Add the capability to define speed scan
+- Make an abstration layer to interface with different cards
+- BUG: Do not count INVLD paquets when -M option is activated
+- configure.in is used more correctly
+- BUG! : When 255 devices is detected, WifiScanner hang UP ! :-((
+- Add in configure the option to define libpcap location
+- Use more correctly the autoconfigure procedure
+- Create and use a real function to write debug infos, do clean exit and write all 
+  of those information to a debug file
+- Count WEAK IV, Crypted packets, display last IV
+- BUG? Sometime STA FF:FF:FF:FF:FF:FF is appear ?!
+- Add an option to become actif (can send packet to be proactif) (obsolete)
+- Create function to make some mgmt packets (canceled)
+- Can send desassociate packet to a STA, to discover the SSID when is obfuscated
+    (AirJack do it for me :)
+- Detect AirJack, and forged mgmnt packet (can be id by diff of TimeStamp)
+  (it wad detected but not identified)
+- BUG: sometime time is hh:mm:ss.1000, do a little correction :-)
+- BIG BUG: debug addditionnal information field !! - SegFault (it found in 
+  LogPutOtherInformation function)
+- Curses is better detected (option --with and --without work now)
+- Iso-functionnality betwen curses version and non curses version
+- BUG: when a card is turnning on, information are not correctly catch and updated
+- DO refresh RealTime_WND only if sothink is writed and maximum one time per second
+- BUG: Restrict to printable ASCII the SSID
+- Make an ncurses interface or gtk
+- Add an option to choice the max number of packet to read
+- Analyse Probe Response (deduc channel of ad-hoc card)
+- Do a better detection of type of client (problem with Probe request)
+- Detect if Data packet is crypted (like airsnort)
+- Create a function to collect information, analyse and do some correlation to
+  give more information, like DS gateway, number of client, MAC @ of client in
+  a network ...
+- Do some cleanning in Wlan-NG integration (especially in .o)
+- Detect if a prismII card is present
+- Make some picture of detected network architecture (in .dot format of GraphViz)
+
+
+# $Id: TODO,v 1.45 2005/06/29 11:51:59 poggij Exp $
+# vim:tw=78:
+
